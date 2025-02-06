@@ -4,13 +4,12 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import AnimatedBackground from "@/components/AnimatedBackground"
 import { AnimatePresence } from "framer-motion"
 import { motion } from "framer-motion"
-import { LayoutProps } from "@/types/tipos"
 import Footer from "@/components/Footer"
 import Home from "@/components/paginas/Home"
 import Sobre from "@/components/paginas/Sobre"
 
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout() {
   const [activeTab, setActiveTab] = useState("home")
 
   return (

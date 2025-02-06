@@ -1,11 +1,11 @@
 "use client"
 
-import { Dispatch, SetStateAction, useState, type ReactNode } from "react"
+import { Dispatch, SetStateAction } from "react"
 import { TabsContent } from "@/components/ui/tabs"
 import perfilImagem from '@/../public/images/perfil.png'
 import Image from "next/image"
-import { FaChevronRight, FaCogs, FaDatabase, FaDocker, FaGit, FaGithub, FaInstagram, FaJs, FaLanguage, FaLinkedin, FaLinux, FaNodeJs, FaPhp, FaReact, FaTwitter, FaWhatsapp } from "react-icons/fa"
-import { SiTypescript, SiNextdotjs, SiRemix, SiMysql, SiPostgresql, SiLaravel, SiJquery } from "react-icons/si";
+import { FaChevronRight, FaCogs, FaDatabase, FaDocker, FaGithub,  FaJs, FaLanguage, FaLinkedin, FaLinux, FaNodeJs, FaPhp, FaReact, FaWhatsapp } from "react-icons/fa"
+import { SiTypescript, SiNextdotjs, SiRemix, SiMysql, SiPostgresql, SiLaravel} from "react-icons/si";
 import { Card, CardContent } from "../ui/card"
 import { Button } from "../ui/button"
 
@@ -25,10 +25,6 @@ const socialLinks = [
     icon: <FaWhatsapp size={30} />,
     label: "WhatsApp",
   }
-];
-const projetos = [
-  { title: "Projeto 1", descricao: "Breve descrição do Projeto 1", stack: "TypeScript, React.Js" },
-  { title: "Projeto 2", descricao: "Breve descrição do Projeto 2", stack: "TypeScript, React.Js" },
 ];
 
 const technologies = [
