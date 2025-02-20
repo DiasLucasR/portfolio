@@ -1,8 +1,7 @@
 import { TabsContent } from "@/components/ui/tabs"
-
-const arrayHabilidades = ["JavaScript", "TypeScript", "PHP", 'Node.js', "React.js",
-  "Next.js", "Remix.Js", , "React Native", "AngularJS", "Laravel", "SQL",
-  "MySQL", "PostgreSQL", "Docker", "Git", "Linux"];
+import { FaCogs, FaDatabase, FaDocker, FaGithub, FaJs, FaLanguage, FaLinux, FaNodeJs, FaPhp, FaReact } from "react-icons/fa"
+import { SiTypescript, SiNextdotjs, SiRemix, SiMysql, SiPostgresql, SiLaravel } from "react-icons/si";
+import { Card, CardContent } from "../ui/card";
 
 const experiencias = [
   {
@@ -35,6 +34,31 @@ const experiencias = [
   }
 ];
 
+
+const skills = [
+  { name: "JavaScript", icon: <FaJs className="text-yellow-500 text-4xl" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-500 text-4xl" /> },
+  { name: "PHP", icon: <FaPhp className="text-purple-700 text-4xl" /> },
+  { name: "Node.js", icon: <FaNodeJs className="text-green-600 text-4xl" /> },
+  { name: "React.js", icon: <FaReact className="text-blue-400 text-4xl" /> },
+  { name: "Next.js", icon: <SiNextdotjs className="text-black text-4xl" /> },
+  { name: "Remix", icon: <SiRemix className="text-indigo-600 text-4xl" /> },
+  { name: "React Native", icon: <FaReact className="text-blue-400 text-4xl" /> },
+  { name: "AngularJS", icon: <FaCogs className="text-red-600 text-4xl" /> },
+  { name: "Laravel", icon: <SiLaravel className="text-red-700 text-4xl" /> },
+  { name: "Lumen", icon: <SiLaravel className="text-orange-500 text-4xl" /> },
+  { name: "SQL", icon: <FaDatabase className="text-gray-700 text-4xl" /> },
+  { name: "MySQL", icon: <SiMysql className="text-blue-600 text-4xl" /> },
+  { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400 text-4xl" /> },
+  { name: "Docker", icon: <FaDocker className="text-blue-500 text-4xl" /> },
+  { name: "Docker Compose", icon: <FaDocker className="text-blue-300 text-4xl" /> },
+  { name: "Git", icon: <FaGithub className="text-orange-500 text-4xl" /> },
+  { name: "Linux", icon: <FaLinux className="text-gray-700 text-4xl" /> },
+  { name: "English (C2)", icon: <FaLanguage className="text-green-600 text-4xl" /> },
+  { name: "Portuguese (Native)", icon: <FaLanguage className="text-green-600 text-4xl" /> },
+];
+
+
 export default function Sobre() {
 
   return (
@@ -52,23 +76,28 @@ export default function Sobre() {
 
       <section className="mb-12">
         <h2 className="text-3xl font-bold mb-4 text-gradient">Skills</h2>
-        <div className="">
-          <div>
-
+        <section>
+          <div className="container mx-auto ">
+            <Card className="mb-6  bg-transparent">
+              <CardContent className="grid grid-cols-6 gap-3">
+                {skills.map((item, index) => (
+                  <div
+                    key={item.name}
+                    className={`flex flex-col items-center text-center transform transition-transform duration-200 hover:scale-110 ${(index % 6 === 5) ? 'col-start-1' : ''}`}
+                  >
+                    {item.icon}
+                    <span className="mt-2 text-sm font-medium">{item.name}</span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
           </div>
-          <span className="grid grid-cols-2 sm::grid-cols-2 md:grid-cols-4 gap-4">
-            {arrayHabilidades.map((skill) => (
-              <div key={skill} className="bg-gray-800 p-3 rounded-lg text-center hover-lift">
-                {skill}
-              </div>
-            ))}
-          </span>
-        </div>
+        </section>
 
       </section>
 
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-4 text-gradient">Experiência Profissional</h2>
+        <h2 className="text-3xl font-bold mb-4 text-gradient">Professional Experience</h2>
         <div className="space-y-6">
           {experiencias.map((experiencia, index) => (
             <div key={`experiencias-empresas-${experiencia.empresa}${index}`}>

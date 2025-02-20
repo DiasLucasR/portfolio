@@ -4,15 +4,14 @@ import { Dispatch, SetStateAction } from "react"
 import { TabsContent } from "@/components/ui/tabs"
 import perfilImagem from '@/../public/images/perfil.png'
 import Image from "next/image"
-import { FaChevronRight, FaCogs, FaDatabase, FaDocker, FaGithub,  FaJs, FaLanguage, FaLinkedin, FaLinux, FaNodeJs, FaPhp, FaReact, FaWhatsapp } from "react-icons/fa"
-import { SiTypescript, SiNextdotjs, SiRemix, SiMysql, SiPostgresql, SiLaravel} from "react-icons/si";
-import { Card, CardContent } from "../ui/card"
+import { FaChevronRight, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa"
 import { Button } from "../ui/button"
+import { ProjectShowcase } from "../ProjectShowCase"
 
 const socialLinks = [
   {
     href: "https://linkedin.com/in/lucasrdias",
-    icon: <FaLinkedin size={30}  />,
+    icon: <FaLinkedin size={30} />,
     label: "LinkedIn",
   },
   {
@@ -27,48 +26,6 @@ const socialLinks = [
   }
 ];
 
-const technologies = [
-  {
-    category: "Languages, Frameworks & Librarys",
-    items: [
-      { name: "JavaScript", icon: <FaJs className="text-yellow-500 text-4xl" /> },
-      { name: "TypeScript", icon: <SiTypescript className="text-blue-500 text-4xl" /> },
-      { name: "PHP", icon: <FaPhp className="text-purple-700 text-4xl" /> },
-      { name: "Node.js", icon: <FaNodeJs className="text-green-600 text-4xl" /> },
-      { name: "React.js", icon: <FaReact className="text-blue-400 text-4xl" /> },
-      { name: "Next.js", icon: <SiNextdotjs className="text-black text-4xl" /> },
-      { name: "Remix", icon: <SiRemix className="text-indigo-600 text-4xl" /> },
-      { name: "React Native", icon: <FaReact className="text-blue-400 text-4xl" /> },
-      { name: "AngularJS", icon: <FaCogs className="text-red-600 text-4xl" /> },
-      { name: "Laravel", icon: <SiLaravel className="text-red-700 text-4xl" /> },
-      { name: "Lumen", icon: <SiLaravel className="text-orange-500 text-4xl" /> },
-    ],
-  },
-  {
-    category: "Databases",
-    items: [
-      { name: "SQL", icon: <FaDatabase className="text-gray-700 text-4xl" /> },
-      { name: "MySQL", icon: <SiMysql className="text-blue-600 text-4xl" /> },
-      { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-400 text-4xl" /> },
-    ],
-  },
-  {
-    category: "Tools",
-    items: [
-      { name: "Docker", icon: <FaDocker className="text-blue-500 text-4xl" /> },
-      { name: "Docker Compose", icon: <FaDocker className="text-blue-300 text-4xl" /> },
-      { name: "Git", icon: <FaGithub className="text-orange-500 text-4xl" /> },
-      { name: "Linux", icon: <FaLinux className="text-gray-700 text-4xl" /> },
-    ],
-  },
-  {
-    category: "Languages",
-    items: [
-      { name: "English (C2)", icon: <FaLanguage className="text-green-600 text-4xl" /> },
-      { name: "Portuguese (Native)", icon: <FaLanguage className="text-green-600 text-4xl" /> },
-    ],
-  },
-];
 
 interface HomeProps {
   setActiveTab: Dispatch<SetStateAction<string>>;
@@ -100,11 +57,11 @@ export default function Home({ setActiveTab }: HomeProps) {
             <p>
               Lucas Dias
             </p>
-            <a href="mailto:lucasrafa2008@gmail.com"  target="_blank"><p>
+            <a href="mailto:lucasrafa2008@gmail.com" target="_blank"><p>
               <strong>Email:</strong> lucasrafa2008@gmail.com
             </p>
             </a>
-            <a href="https://wa.me/5538991206281"  target="_blank"><p>
+            <a href="https://wa.me/5538991206281" target="_blank"><p>
               <strong>Phone:</strong> +55 (38) 99120-6281
             </p>
             </a>
@@ -122,51 +79,26 @@ export default function Home({ setActiveTab }: HomeProps) {
                 </a>
               ))}
             </div>
-            <Button className="my-3 p-5 rounded-3xl hover:bg-blue-950"  variant="outline" onClick={() => setActiveTab('sobre')}>
-              About Me <FaChevronRight  />
-              </Button>
+            <Button className="my-3 p-5 rounded-3xl hover:bg-blue-950" variant="outline" onClick={() => setActiveTab('sobre')}>
+              About Me <FaChevronRight />
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* <section>
-          <h2 className="text-3xl font-bold mb-4 text-gradient">Projetos em Destaque</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projetos.map((project, index) => (
-              <div key={index} className="bg-gray-800 p-6 rounded-lg shadow-lg hover-lift">
-                <h3 className="text-2xl font-semibold mb-2 text-blue-400">{project.title}</h3>
-                <p>{project.descricao}</p>
-                <p>
-                  <h5 className="text-sm">Stack</h5>
-                  <h6 className="text-xs">
-                  {project.stack}
-                  </h6>
-                </p>
-              </div>
-            ))}
-          </div>
-        </section> */}
-      <section>
-        <div className="container mx-auto ">
-          <Card className="mb-6  bg-transparent">
-            <CardContent >
-              {technologies.map((tech, index) => (
-                <div key={`icones-stack-${index}`}>
-                  <h2 className="text-xl font-bold mb-4 mt-4">{tech.category}</h2>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    {tech.items.map((item) => (
-                      <div key={item.name} className="flex flex-col items-center text-center hover:scale-110">
-                        {item.icon}
-                        <span className="mt-2 text-sm font-medium">{item.name}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>))}
-
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+      <ProjectShowcase
+       title = "Consumo da API Rick and Morty - Criando uma Wiki Completa"
+       description =
+         "Um projeto que utiliza a API Rick and Morty para criar uma Wiki interativa, apresentando dados sobre personagens, locais e outros detalhes do universo da série."
+        images={[
+          '/images/projeto_rick_morty/Home.png',
+          '/images/projeto_rick_morty/AllLocations.png',
+          '/images/projeto_rick_morty/detailsCitadel.png',
+          '/images/projeto_rick_morty/allCharacter.png'
+        ]}
+        
+        techStack={["Next.js", "TypeScript", "Tailwind CSS"]}
+      />
 
     </TabsContent>
   )
