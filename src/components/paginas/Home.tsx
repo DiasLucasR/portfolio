@@ -57,8 +57,8 @@ export default function Home({ setActiveTab }: HomeProps) {
             <p>
               Lucas Dias
             </p>
-            <a href="mailto:lucasrafa2008@gmail.com" target="_blank"><p>
-              <strong>Email:</strong> lucasrafa2008@gmail.com
+            <a href="mailto:lucasr.oliveira.dias@gmail.com" target="_blank"><p>
+              <strong>Email:</strong> lucasr.oliveira.dias@gmail.com
             </p>
             </a>
             <a href="https://wa.me/5538991206281" target="_blank"><p>
