@@ -31,7 +31,18 @@ const experiencias = [
       { texto: "Configured new clients within the communication environment, reducing onboarding time" },
       { texto: "Provided specialized technical support, including code adjustments, to ensure service continuity and resolve communication issues promptly." },
     ]
-  }
+  },
+  {
+    "empresa": "Universidade Estadual de Montes Claros",
+    "cargo": "Estágio",
+    "descricao": [
+      { "texto": "Designed and developed websites and internal systems using PHP frameworks (CodeIgniter, Laravel), delivering efficient and scalable solutions." },
+      { "texto": "Created and optimized systems to streamline internal processes, improving operational efficiency." },
+      { "texto": "Monitored and maintained campus network infrastructure using Zabbix on Linux environments, ensuring high availability and performance." },
+      { "texto": "Assisted users with technical issues, providing timely resolutions and ensuring smooth operations." },
+      { "texto": "Gained hands-on experience with Linux-based systems for server management and troubleshooting." }
+    ]
+  }  
 ];
 
 

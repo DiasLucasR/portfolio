@@ -86,19 +86,38 @@ export default function Home({ setActiveTab }: HomeProps) {
         </div>
       </section>
 
-      <ProjectShowcase
-       title = "Consumo da API Rick and Morty - Criando uma Wiki Completa"
-       description =
-         "Um projeto que utiliza a API Rick and Morty para criar uma Wiki interativa, apresentando dados sobre personagens, locais e outros detalhes do universo da série."
-        images={[
-          '/images/projeto_rick_morty/Home.png',
-          '/images/projeto_rick_morty/AllLocations.png',
-          '/images/projeto_rick_morty/detailsCitadel.png',
-          '/images/projeto_rick_morty/allCharacter.png'
-        ]}
-        
-        techStack={["Next.js", "TypeScript", "Tailwind CSS"]}
-      />
+      <div className="flex space-x-4">
+        <div className="flex-1 flex flex-col">
+          <ProjectShowcase
+            title="Consumo da API Rick and Morty - Criando uma Wiki Completa"
+            description="Um projeto que utiliza a API Rick and Morty para criar uma Wiki interativa, apresentando dados sobre personagens, locais e outros detalhes do universo da série."
+            urlproject="https://github.com/DiasLucasR/ricknmorty_api"
+            images={[
+              '/images/projeto_rick_morty/Home.png',
+              '/images/projeto_rick_morty/AllLocations.png',
+              '/images/projeto_rick_morty/detailsCitadel.png',
+              '/images/projeto_rick_morty/allCharacter.png'
+            ]}
+            techStack={["Next.js", "TypeScript", "Tailwind CSS"]}
+          />
+        </div>
+        <div className="flex-1 flex flex-col">
+          <ProjectShowcase
+            title="Order Management System"
+            description="Este é um sistema de gerenciamento de pedidos simples que permite criar e atualizar pedidos com base em uma lista de produtos. Ele foi desenvolvido utilizando Next.js, Material-UI (MUI) e outras tecnologias modernas."
+            urlproject="https://github.com/DiasLucasR/order_manegement/"
+            images={[
+              '/images/ecommerce_front/dashBoard.png',
+              '/images/ecommerce_front/category.png',
+              '/images/ecommerce_front/modal_orders.png',
+              '/images/ecommerce_front/Orders.png',
+              '/images/ecommerce_front/product.png'
+            ]}
+            techStack={["Next.js", "TypeScript", "Tailwind CSS", "Material-UI"]}
+          />
+        </div>
+      </div>
+
 
     </TabsContent>
   )

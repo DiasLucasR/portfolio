@@ -13,9 +13,10 @@ interface ProjectShowcaseProps {
   description: string
   images: string[]
   techStack: string[]
+  urlproject: string
 }
 
-export function ProjectShowcase({ title, description, images, techStack }: ProjectShowcaseProps) {
+export function ProjectShowcase({ title, description, images, techStack, urlproject }: ProjectShowcaseProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel()
 
   const scrollPrev = React.useCallback(() => {
@@ -29,7 +30,9 @@ export function ProjectShowcase({ title, description, images, techStack }: Proje
   return (
     <Card className="w-full  mx-auto">
       <CardHeader>
-        <CardTitle>{title}</CardTitle>
+        <CardTitle>
+        <a href={urlproject} target="_blank">{title}</a>
+          </CardTitle>
         <CardDescription>{description}</CardDescription>
         
       </CardHeader>
@@ -62,13 +65,13 @@ export function ProjectShowcase({ title, description, images, techStack }: Proje
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md"
             onClick={scrollPrev}
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-6 h-6 text-slate-600" />
           </button>
           <button
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 rounded-full p-2 shadow-md"
             onClick={scrollNext}
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-6 h-6 text-slate-600" />
           </button>
         </div>
       </CardContent>
