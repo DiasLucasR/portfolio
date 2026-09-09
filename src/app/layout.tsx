@@ -1,29 +1,41 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import type React from "react"
-import { Analytics } from '@vercel/analytics/next';
+import type { Metadata } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
+import "./globals.css";
+import type React from "react";
+import { Analytics } from "@vercel/analytics/next";
 
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
-const inter = Inter({ subsets: ["latin"] })
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-space-grotesk",
+});
 
 export const metadata: Metadata = {
-  title: "Lucas Dias - Full-Stack Developer",
-  description: "Full-stack developer. Passionate about building user-friendly and scalable web applications. Explore my portfolio for projects showcasing my expertise.",
-}
+  title: "Lucas Dias — Senior Full-Stack Software Engineer",
+  description:
+    "Senior Full-Stack Software Engineer with 5+ years building modern, scalable web applications with React, TypeScript, .NET and Node.js.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="pt-BR" className="dark scroll-smooth">
-      <body className={`${inter.className} bg-gray-900 text-white`}>
-      {children}
-      <Analytics />
+    <html
+      lang="en"
+      className={`${inter.variable} ${spaceGrotesk.variable}`}
+    >
+      <body>
+        {children}
+        <Analytics />
       </body>
     </html>
-  )
+  );
 }
-
