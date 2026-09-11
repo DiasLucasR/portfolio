@@ -2,19 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import perfil from "@/../public/images/perfil.png";
 import { CONTACT } from "@/content/i18n";
 import { useLang } from "@/content/language-provider";
+import { SocialLinks } from "@/components/SocialLinks";
 
 export function Hero() {
   const { t } = useLang();
-
-  const socials = [
-    { href: CONTACT.linkedin, icon: FaLinkedin, label: "LinkedIn" },
-    { href: CONTACT.github, icon: FaGithub, label: "GitHub" },
-    { href: CONTACT.phoneHref, icon: FaWhatsapp, label: "WhatsApp" },
-  ];
 
   return (
     <section id="top" className="container-page pt-20 pb-24 sm:pt-28">
@@ -67,20 +61,7 @@ export function Hero() {
           >
             {t.hero.resumeCta}
           </a>
-          <div className="ml-1 flex items-center gap-1">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.label}
-                className="rounded-full p-2 text-muted-foreground transition-colors hover:text-brand"
-              >
-                <s.icon size={18} />
-              </a>
-            ))}
-          </div>
+          <SocialLinks className="ml-1 flex items-center gap-1" iconSize={18} />
         </div>
       </motion.div>
     </section>

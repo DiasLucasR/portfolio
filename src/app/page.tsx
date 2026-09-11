@@ -1,13 +1,11 @@
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/sections/Hero";
-import {
-  About,
-  Contact,
-  Education,
-  Experience,
-  Footer,
-  Skills,
-} from "@/components/sections/Content";
+import { About } from "@/components/sections/About";
+import { Experience } from "@/components/sections/Experience";
+import { Skills } from "@/components/sections/Skills";
+import { Education } from "@/components/sections/Education";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/sections/Footer";
 
 export default function Page() {
   return (
