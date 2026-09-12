@@ -2,7 +2,9 @@ export const CONTACT = {
   name: "Lucas Dias",
   email: "lucasroliveiradias@gmail.com",
   phone: "+55 (38) 99120-6281",
-  phoneHref: "https://wa.me/5538991206281",
+  phoneHref: `https://wa.me/5538991206281?text=${encodeURIComponent(
+    "Hi! I found your portfolio and I'm interested in getting in touch."
+  )}`,
   linkedin: "https://linkedin.com/in/lucasrdias",
   github: "https://github.com/DiasLucasR",
 };
