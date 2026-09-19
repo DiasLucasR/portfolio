@@ -3,7 +3,7 @@ export const CONTACT = {
   email: "lucasroliveiradias@gmail.com",
   phone: "+55 (38) 99120-6281",
   phoneHref: `https://wa.me/5538991206281?text=${encodeURIComponent(
-    "Hi! I found your portfolio and I'm interested in getting in touch."
+    "Hi! I found your portfolio and I'm interested in getting in touch.",
   )}`,
   linkedin: "https://linkedin.com/in/lucasrdias",
   github: "https://github.com/DiasLucasR",
@@ -105,7 +105,12 @@ const skillGroups = (labels: [string, string, string, string, string]) => [
 ];
 
 export const dictionary: Dict = {
-  nav: { about: "About", experience: "Experience", skills: "Skills", contact: "Contact" },
+  nav: {
+    about: "About",
+    experience: "Experience",
+    skills: "Skills",
+    contact: "Contact",
+  },
   hero: {
     role: "Senior Full-Stack Software Engineer",
     intro:
@@ -177,7 +182,10 @@ export const dictionary: Dict = {
     degree: "Systems Analysis and Development",
     school: "University of Franca (UNIFRAN)",
     languagesTitle: "Languages",
-    languages: ["Portuguese — Native", "English — Advanced / Professional Working Proficiency"],
+    languages: [
+      "Portuguese — Native",
+      "English — Advanced / Professional Working Proficiency",
+    ],
   },
   contact: {
     title: "Let's work together",
@@ -186,5 +194,5 @@ export const dictionary: Dict = {
     emailLabel: "Email",
     phoneLabel: "WhatsApp",
   },
-  footer: "Built with Next.js & Tailwind CSS.",
+  footer: "Built with Vite & Tailwind CSS.",
 };

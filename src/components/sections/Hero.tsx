@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import perfil from "@/../public/images/perfil.png";
 import { CONTACT } from "@/content/i18n";
 import { useLang } from "@/content/language-provider";
 import { SocialLinks } from "@/components/SocialLinks";
@@ -19,12 +17,11 @@ export function Hero() {
       >
         <div className="mb-8 flex items-center gap-4">
           <span className="rounded-full p-[2px] [background:linear-gradient(120deg,var(--blue),var(--violet))]">
-            <Image
-              src={perfil}
+            <img
+              src="/images/perfil.png"
               alt="Lucas Dias"
               width={60}
               height={60}
-              priority
               className="block rounded-full object-cover"
             />
           </span>
