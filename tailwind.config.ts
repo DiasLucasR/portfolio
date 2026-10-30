@@ -24,8 +24,9 @@ export default {
         danger: "var(--danger)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["var(--font-space-grotesk)", "var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-sans)"],
+        display: ["var(--font-display)"],
+        mono: ["var(--font-mono)"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -34,5 +35,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [],
 } satisfies Config;

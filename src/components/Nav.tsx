@@ -16,25 +16,20 @@ export function Nav() {
 
   const links = [
     { href: "#about", label: t.nav.about },
-    { href: "#experience", label: t.nav.experience },
+    { href: "#focus", label: t.nav.focus },
     { href: "#skills", label: t.nav.skills },
     { href: "#contact", label: t.nav.contact },
   ];
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors ${
-        scrolled
-          ? "border-b border-hair nav-blur"
-          : "border-b border-transparent"
+      className={`sticky top-0 z-50 border-b ${
+        scrolled ? "border-hair nav-blur" : "border-transparent"
       }`}
     >
       <nav className="container-page flex h-16 items-center justify-between">
-        <a
-          href="#top"
-          className="font-display text-sm font-semibold tracking-tight text-ink"
-        >
-          Lucas<span className="brand-gradient"> Dias</span>
+        <a href="#top" className="font-display text-xl text-ink">
+          Lucas Dias
         </a>
         <ul className="hidden gap-7 text-sm text-dim sm:flex">
           {links.map((l) => (

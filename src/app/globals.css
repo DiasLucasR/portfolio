@@ -4,32 +4,29 @@
 
 @layer base {
   :root {
-    --bg: #0c1220;
-    --bg-2: #111a2e;
-    --bg-elevated: #0e1524;
-    --surface: rgba(22, 33, 60, 0.78);
+    --bg: #0a0e17;
+    --bg-elevated: #0f1522;
+    --surface: #121a2b;
 
-    --ink: #ffffff;
-    --text: #eaf0ff;
-    --muted: #8a97b4;
+    --ink: #eef2fa;
+    --text: #c5cde0;
+    --muted: #7f8aa3;
 
-    --blue: #22d3ee;
-    --blue-hover: #67e8f9;
-    --violet: #7c5cff;
-    --accent-ink: #06121a;
+    --blue: #6b95e0; /* acento único */
+    --blue-hover: #8cb0ee;
+    --accent-ink: #07101f;
 
-    --hair: rgba(255, 255, 255, 0.09);
-    --hair-strong: rgba(255, 255, 255, 0.15);
-    --glow-cyan: rgba(34, 211, 238, 0.45);
-    --glow-violet: rgba(124, 92, 255, 0.35);
+    --hair: rgba(160, 185, 255, 0.1);
+    --hair-strong: rgba(160, 185, 255, 0.24);
 
-    --ok: #34d399;
+    --ok: #6b95e0;
     --danger: #f97066;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-    --font-display: var(--font-space-grotesk), var(--font-inter), sans-serif;
+    --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Instrument Serif", "Times New Roman", serif;
+    --font-mono: "Geist Mono", ui-monospace, monospace;
   }
 
   * {
@@ -47,23 +44,8 @@
     color: var(--text);
     font-family: var(--font-sans);
     background-color: var(--bg);
-    background-image:
-      radial-gradient(900px 500px at 50% -10%, var(--glow-cyan), transparent 60%),
-      radial-gradient(700px 420px at 80% 0%, var(--glow-violet), transparent 55%),
-      linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 45%, var(--bg) 100%);
-    background-attachment: fixed;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-  }
-
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-    background-size: 36px 36px;
-    mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
   }
 
   img {
@@ -78,32 +60,44 @@
   h1,
   h2,
   h3 {
-    font-family: var(--font-display);
     color: var(--ink);
   }
 
   ::selection {
-    background-color: var(--glow-violet);
-    color: var(--ink);
+    background-color: var(--blue);
+    color: var(--accent-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
 @layer utilities {
   .container-page {
-    width: min(70vw, 1200px);
+    width: min(100%, 72rem);
     margin-inline: auto;
     padding-inline: 1.5rem;
   }
-
-  @media (max-width: 640px) {
+  @media (min-width: 1024px) {
     .container-page {
-      width: min(100%, calc(100vw - 1.5rem));
-      padding-inline: 0.75rem;
+      padding-inline: 3rem;
     }
   }
 
   .font-display {
     font-family: var(--font-display);
+    font-weight: 400;
+  }
+  .font-mono {
+    font-family: var(--font-mono);
   }
 
   .text-ink {
@@ -119,13 +113,6 @@
     color: var(--blue);
   }
 
-  .brand-gradient {
-    background-image: linear-gradient(120deg, var(--blue), var(--violet));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
   .border-hair {
     border-color: var(--hair);
   }
@@ -136,27 +123,17 @@
     border-color: var(--blue);
   }
 
-  .surface {
-    background: rgba(22, 33, 60, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-  }
   .bg-elevated {
     background-color: var(--bg-elevated);
   }
   .nav-blur {
-    background-color: rgba(14, 21, 36, 0.82);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    box-shadow: 0 10px 30px rgba(8, 12, 22, 0.22);
+    background-color: var(--bg);
   }
 
-  .glass-panel {
-    background: linear-gradient(180deg, rgba(15, 23, 42, 0.72), rgba(13, 18, 31, 0.52));
-    border: 1px solid rgba(255,255,255,0.08);
-    box-shadow: 0 14px 48px rgba(7, 10, 18, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--muted);
   }
 
   .link-underline {
@@ -168,19 +145,5 @@
   }
   .link-underline:hover::after {
     @apply origin-left scale-x-100;
-  }
-
-  .soft-float {
-    animation: softFloat 7s ease-in-out infinite;
-  }
-
-  @keyframes softFloat {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-8px);
-    }
   }
 }
