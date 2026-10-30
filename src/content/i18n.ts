@@ -15,15 +15,8 @@ export const SOCIALS = [
   { href: CONTACT.phoneHref, icon: "whatsapp", label: "WhatsApp" },
 ] as const;
 
-type Experience = {
-  role: string;
-  company: string;
-  period: string;
-  bullets: string[];
-};
-
 type Dict = {
-  nav: { about: string; experience: string; skills: string; contact: string };
+  nav: { about: string; focus: string; skills: string; contact: string };
   hero: {
     role: string;
     intro: string;
@@ -34,22 +27,15 @@ type Dict = {
     title: string;
     paragraphs: string[];
   };
-  experience: {
+  focus: {
     title: string;
-    items: Experience[];
+    items: { title: string; text: string }[];
   };
   skills: {
     title: string;
     groups: { label: string; items: string[] }[];
   };
-  education: {
-    title: string;
-    degreeLabel: string;
-    degree: string;
-    school: string;
-    languagesTitle: string;
-    languages: string[];
-  };
+  facts: { label: string; value: string }[];
   contact: {
     title: string;
     subtitle: string;
@@ -107,62 +93,39 @@ const skillGroups = (labels: [string, string, string, string, string]) => [
 export const dictionary: Dict = {
   nav: {
     about: "About",
-    experience: "Experience",
+    focus: "What I do",
     skills: "Skills",
     contact: "Contact",
   },
   hero: {
     role: "Senior Full-Stack Software Engineer",
     intro:
-      "5+ years designing and building modern, scalable web applications with deep expertise in React, TypeScript and frontend architecture — backed by solid backend engineering with .NET, Node.js and distributed systems.",
+      "I build web applications end to end: React and TypeScript on the front, .NET and Node.js behind them. Five years in, mostly business software: workflows, integrations and the APIs that connect them.",
     emailCta: "Get in touch",
     resumeCta: "LinkedIn",
   },
   about: {
     title: "About",
     paragraphs: [
-      "I build reusable UI components, complex business workflows, responsive interfaces and data-driven applications using React, Vite, Next.js, Remix, Tailwind CSS and TanStack Query, following modern engineering best practices.",
-      "I have a strong background integrating frontend applications with REST APIs, implementing secure authentication with OAuth/OIDC, improving performance, and delivering maintainable software guided by SOLID, Clean Architecture and Agile methodologies.",
-      "My complementary backend expertise with .NET, Node.js, PHP and AWS lets me design end-to-end solutions and collaborate closely across cross-functional engineering teams.",
+      "I work across the whole stack, but I care most about the part people touch: interfaces that stay fast, readable and easy to change.",
+      "Day to day that means React, TypeScript and Tailwind on the frontend, REST APIs and OAuth/OIDC authentication in between, and .NET, Node.js or PHP behind them. SOLID and Clean Architecture keep the code maintainable as the product grows.",
+      "I have also built serverless systems on AWS, ERP and billing integrations, and AI features on top of LLM services, working closely with product and engineering teams.",
     ],
   },
-  experience: {
-    title: "Experience",
+  focus: {
+    title: "What I do",
     items: [
       {
-        role: "Full-Stack Developer",
-        company: "Automatiza",
-        period: "Apr 2025 — Present",
-        bullets: [
-          "Develop full-stack enterprise applications with React, TypeScript, Vite and Tailwind CSS, plus scalable backend services in .NET (C#) using DDD, CQRS and Clean Architecture.",
-          "Design RESTful APIs, service integrations and backend workflows, with Redis for high-performance data access and caching.",
-          "Build secure authentication and authorization flows using OAuth 2.0 and OpenID Connect (OIDC).",
-          "Design and integrate AI-powered solutions using Generative AI services and LLM workflows.",
-          "Automated critical business workflows and system integrations, reducing manual operational effort by 20%.",
-        ],
+        title: "Frontend engineering",
+        text: "Reusable component systems, complex business workflows and fast, responsive interfaces with React, TypeScript, Next.js, Remix and Tailwind CSS.",
       },
       {
-        role: "Full-Stack Developer",
-        company: "Dommus Tecnologia",
-        period: "Nov 2022 — Apr 2025",
-        bullets: [
-          "Developed enterprise web applications using React, TypeScript, Next.js and Remix, with reusable components and responsive interfaces.",
-          "Integrated frontend applications with REST and XML APIs using SWR for efficient server-state management.",
-          "Designed and maintained microservices with Laravel Lumen, Docker and Node.js, plus event-driven asynchronous integrations.",
-          "Led ERP integration initiatives through REST APIs, reducing manual processes by 40%.",
-          "Implemented financial-system integrations and automated billing workflows, accelerating collection operations by 30%.",
-        ],
+        title: "Backend & APIs",
+        text: "Scalable services in .NET, Node.js and PHP using DDD, CQRS and Clean Architecture, with secure OAuth 2.0 / OIDC authentication and Redis caching.",
       },
       {
-        role: "Full-Stack Developer",
-        company: "Cerrado Code",
-        period: "Jul 2021 — Nov 2022",
-        bullets: [
-          "Developed modern web applications using React, TypeScript and Next.js with responsive interfaces.",
-          "Built scalable serverless applications using AWS Lambda, API Gateway and DynamoDB, reducing infrastructure costs by 20%.",
-          "Built and deployed cloud-native solutions using the AWS Serverless Framework.",
-          "Integrated third-party REST APIs and external services to support business growth.",
-        ],
+        title: "Cloud & integrations",
+        text: "Serverless and containerized systems on AWS, ERP and financial integrations, and AI-powered workflows built on Generative AI and LLM services.",
       },
     ],
   },
@@ -176,17 +139,17 @@ export const dictionary: Dict = {
       "Databases",
     ]),
   },
-  education: {
-    title: "Education",
-    degreeLabel: "Degree",
-    degree: "Systems Analysis and Development",
-    school: "University of Franca (UNIFRAN)",
-    languagesTitle: "Languages",
-    languages: [
-      "Portuguese — Native",
-      "English — Advanced / Professional Working Proficiency",
-    ],
-  },
+  facts: [
+    { label: "Experience", value: "5+ years" },
+    { label: "Education", value: "Systems Analysis and Development, UNIFRAN" },
+    { label: "Languages", value: "Portuguese (native) · English (advanced)" },
+    {
+      label: "Results",
+      value:
+        "40% less manual work via ERP integration · 30% faster collections · 20% lower infrastructure cost",
+    },
+    { label: "Worked with", value: "Automatiza · Dommus Tecnologia · Cerrado Code" },
+  ],
   contact: {
     title: "Contact",
     subtitle:

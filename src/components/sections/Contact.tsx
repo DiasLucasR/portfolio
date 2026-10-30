@@ -6,7 +6,7 @@ import { Section } from "./Section";
 export function Contact() {
   const { t } = useLang();
   return (
-    <Section id="contact" index="05" title={t.contact.title}>
+    <Section id="contact" title={t.contact.title}>
       <p className="max-w-xl text-base leading-relaxed text-dim">
         {t.contact.subtitle}
       </p>

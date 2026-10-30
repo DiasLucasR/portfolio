@@ -4,7 +4,7 @@ import { Section } from "./Section";
 export function Skills() {
   const { t } = useLang();
   return (
-    <Section id="skills" index="03" title={t.skills.title}>
+    <Section id="skills" title={t.skills.title}>
       <dl className="divide-y divide-[var(--hair)]">
         {t.skills.groups.map((group) => (
           <div
@@ -12,8 +12,8 @@ export function Skills() {
             className="grid gap-2 py-6 first:pt-0 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-8"
           >
             <dt className="label pt-1">{group.label}</dt>
-            <dd className="text-base leading-relaxed text-body">
-              {group.items.join("  ·  ")}
+            <dd className="leading-relaxed text-body">
+              {group.items.join(", ")}
             </dd>
           </div>
         ))}

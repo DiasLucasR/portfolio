@@ -4,22 +4,22 @@
 
 @layer base {
   :root {
-    --bg: #0b0b0a;
-    --bg-elevated: #131311;
-    --surface: #131311;
+    --bg: #0a0e17;
+    --bg-elevated: #0f1522;
+    --surface: #121a2b;
 
-    --ink: #f4f1ea;
-    --text: #d6d2c8;
-    --muted: #8b877c;
+    --ink: #eef2fa;
+    --text: #c5cde0;
+    --muted: #7f8aa3;
 
-    --blue: #c8f560; /* accent único (nome legado, mantido p/ tailwind) */
-    --blue-hover: #dcff8a;
-    --accent-ink: #0b0b0a;
+    --blue: #6b95e0; /* acento único */
+    --blue-hover: #8cb0ee;
+    --accent-ink: #07101f;
 
-    --hair: rgba(244, 241, 234, 0.1);
-    --hair-strong: rgba(244, 241, 234, 0.22);
+    --hair: rgba(160, 185, 255, 0.1);
+    --hair-strong: rgba(160, 185, 255, 0.24);
 
-    --ok: #c8f560;
+    --ok: #6b95e0;
     --danger: #f97066;
 
     --radius: 0.5rem;
@@ -127,16 +127,12 @@
     background-color: var(--bg-elevated);
   }
   .nav-blur {
-    background-color: rgba(11, 11, 10, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--bg);
   }
 
   .label {
     font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+    font-size: 0.8125rem;
     color: var(--muted);
   }
 
