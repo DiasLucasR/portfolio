@@ -1,5 +1,3 @@
-"use client";
-
 import { CONTACT } from "@/content/i18n";
 import { useLang } from "@/content/language-provider";
 import { SocialLinks } from "@/components/SocialLinks";
@@ -8,45 +6,28 @@ import { Section } from "./Section";
 export function Contact() {
   const { t } = useLang();
   return (
-    <Section id="contact" title={t.contact.title}>
-      <div className="glass-panel rounded-3xl p-6 sm:p-8">
-        <p className="max-w-xl text-base leading-relaxed text-muted-foreground">
-          {t.contact.subtitle}
-        </p>
-        <dl className="mt-8 space-y-4">
-          <div className="grid gap-1 sm:grid-cols-[9rem_1fr] sm:gap-6">
-            <dt className="text-sm text-muted-foreground">
-              {t.contact.emailLabel}
-            </dt>
-            <dd>
-              <a
-                href={`mailto:${CONTACT.email}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline text-brand"
-              >
-                {CONTACT.email}
-              </a>
-            </dd>
-          </div>
-          <div className="grid gap-1 sm:grid-cols-[9rem_1fr] sm:gap-6">
-            <dt className="text-sm text-muted-foreground">
-              {t.contact.phoneLabel}
-            </dt>
-            <dd>
-              <a
-                href={CONTACT.phoneHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link-underline"
-              >
-                {CONTACT.phone}
-              </a>
-            </dd>
-          </div>
-        </dl>
-        <SocialLinks className="mt-8 flex gap-1" iconSize={20} />
-      </div>
+    <Section id="contact" index="05" title={t.contact.title}>
+      <p className="max-w-xl text-base leading-relaxed text-dim">
+        {t.contact.subtitle}
+      </p>
+      <a
+        href={`mailto:${CONTACT.email}`}
+        className="link-underline mt-8 inline-block break-all font-display text-3xl text-brand sm:text-5xl"
+      >
+        {CONTACT.email}
+      </a>
+      <p className="mt-6 text-sm text-dim">
+        {t.contact.phoneLabel}:{" "}
+        <a
+          href={CONTACT.phoneHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-underline text-body"
+        >
+          {CONTACT.phone}
+        </a>
+      </p>
+      <SocialLinks className="mt-8 -ml-2 flex gap-1" iconSize={20} />
     </Section>
   );
 }

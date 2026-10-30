@@ -1,34 +1,23 @@
-"use client";
-
 import { useLang } from "@/content/language-provider";
 import { Section } from "./Section";
 
 export function Skills() {
   const { t } = useLang();
   return (
-    <Section id="skills" title={t.skills.title}>
-      <div className="space-y-6">
+    <Section id="skills" index="03" title={t.skills.title}>
+      <dl className="divide-y divide-[var(--hair)]">
         {t.skills.groups.map((group) => (
           <div
             key={group.label}
-            className="glass-panel grid gap-3 rounded-2xl p-4 sm:grid-cols-[9rem_1fr] sm:gap-6 sm:p-5"
+            className="grid gap-2 py-6 first:pt-0 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-8"
           >
-            <p className="pt-1 text-sm font-medium text-muted-foreground">
-              {group.label}
-            </p>
-            <ul className="flex flex-wrap gap-2">
-              {group.items.map((item) => (
-                <li
-                  key={item}
-                  className="surface rounded-full border border-hair px-3 py-1.5 text-sm text-body transition-transform duration-200 hover:-translate-y-0.5"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <dt className="label pt-1">{group.label}</dt>
+            <dd className="text-base leading-relaxed text-body">
+              {group.items.join("  ·  ")}
+            </dd>
           </div>
         ))}
-      </div>
+      </dl>
     </Section>
   );
 }

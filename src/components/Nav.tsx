@@ -32,9 +32,9 @@ export function Nav() {
       <nav className="container-page flex h-16 items-center justify-between">
         <a
           href="#top"
-          className="font-display text-sm font-semibold tracking-tight text-ink"
+          className="font-display text-xl text-ink"
         >
-          Lucas<span className="brand-gradient"> Dias</span>
+          Lucas Dias
         </a>
         <ul className="hidden gap-7 text-sm text-dim sm:flex">
           {links.map((l) => (

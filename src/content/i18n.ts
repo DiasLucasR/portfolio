@@ -188,7 +188,7 @@ export const dictionary: Dict = {
     ],
   },
   contact: {
-    title: "Let's work together",
+    title: "Contact",
     subtitle:
       "Open to senior full-stack and frontend roles. The fastest way to reach me is email.",
     emailLabel: "Email",
